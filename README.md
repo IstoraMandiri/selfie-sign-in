@@ -10,7 +10,7 @@ It becomes their avatar for the duration of the session.
 
 * CollectionFS
 * cfs-gridfs
-* user-status
+-----* user-status
 * graphicsmagick
 
 ## Quickstart

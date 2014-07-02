@@ -5,6 +5,8 @@
   "author": "Chris Hitchcott <hitchcott@gmail.com>",
   "version": "0.1.0",
   "packages": {
-    "accounts-testing": {}
+    "collectionFS": {},
+    "cfs-gridfs": {},
+    "cfs-graphicsmagick": {}
   }
 }

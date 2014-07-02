@@ -1,3 +1,22 @@
 <template name='selfie_sign_in'>
-  <p>Selfie sign in here</p>
+  <div class="selfie-sign-in">
+    {{#if loggedIn}}
+      <h1>Hi, {{loggedIn.profile.name}} <img src="{{getSelfie loggedIn}}"/></h1>
+    {{else}}
+      <input type="file" class="selfie-upload">
+      <hr>
+      <img src="{{tempSelfie.url}}">
+      {{#if tempSelfie.url}}
+        <p>Uploadad, please enter your name</p>
+        <p>
+          <input type="text" class='selfie-name'>
+          <button class='selfie-submit'>Sign In</button>
+        </p>
+      {{else}}
+        {{#if selfie}}
+          <p>One second...</p>
+        {{/if}}
+      {{/if}}
+    {{/if}}
+  </div>
 </template>

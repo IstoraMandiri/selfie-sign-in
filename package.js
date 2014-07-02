@@ -3,13 +3,23 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.use(['underscore','templating'], 'client');
-  api.use(['coffeescript','accounts-testing'], ['client','server'])
+  api.use(['ui','templating'], 'client');
+  api.use([
+    'collectionFS',
+    'accounts-base',
+    'cfs-graphicsmagick',
+    'cfs-gridfs',
+    'coffeescript'
+  ], ['client','server'])
 
   api.add_files([
     'client/selfie-sign-in.html',
     'client/selfie-sign-in-client.coffee'
   ], 'client');
+
+  api.add_files([
+    'selfie-sign-in.coffee'
+  ], ['client','server']);
 
   api.add_files([
     'server/selfie-sign-in-server.coffee'
