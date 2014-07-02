@@ -1,0 +1,10 @@
+{
+  "name": "selfie-sign-in",
+  "description": "An insecure sign-in method using selfies",
+  "homepage": "https://github.com/hitchcott/selfie-sign-in",
+  "author": "Chris Hitchcott <hitchcott@gmail.com>",
+  "version": "0.1.0",
+  "packages": {
+    "accounts-testing": {}
+  }
+}
