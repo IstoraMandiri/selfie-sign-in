@@ -7,15 +7,15 @@
     {{else}}
       <input type="file" class="selfie-upload">
       <hr>
-      <img src="{{tempSelfie}}">
-      {{#if tempSelfie}}
+      <img src="{{uploadedSelfie}}">
+      {{#if uploadedSelfie}}
         <p>Uploadad, please enter your name</p>
         <p>
           <input type="text" class='selfie-name'>
           <button class='selfie-submit'>Sign In</button>
         </p>
       {{else}}
-        {{#if tempSelfie}}
+        {{#if uploadedSelfie}}
           <p>One second...</p>
         {{/if}}
       {{/if}}
