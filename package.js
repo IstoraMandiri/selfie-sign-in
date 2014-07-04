@@ -10,7 +10,7 @@ Package.on_use(function (api) {
     'cfs-graphicsmagick',
     'cfs-gridfs',
     'coffeescript'
-  ], ['client','server'])
+  ], ['client','server']);
 
   api.add_files([
     'client/selfie-sign-in.html',
