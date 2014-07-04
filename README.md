@@ -1,17 +1,8 @@
 # Selfie Sign In
 
-A low-security login method for meteor, using selfies.
+A selfie-based login method for Meteor.
 
-To create an acocunt, user is required to submit an image.
-
-It becomes their avatar for the duration of the session.
-
-## Packages Used
-
-* CollectionFS
-* cfs-gridfs
------* user-status
-* graphicsmagick
+Users are are able to login by uploading an image, which becomes their avatar for the duration of the session. If they are using a mobile device, they are prompted to take a picture using their camera, and are encouraged to take a selfie.
 
 ## Quickstart
 
@@ -21,21 +12,50 @@ Install using meteorite
 $ mrt add selfie-sign-in
 ```
 
-Place the login template using
+Add the login template to your app.
 
 ```
 {{> selfie_sign_in}}
 ```
+This step is optional unless you want to write your own UI.
 
-The template will ask the user to submit a picture using the HTML5 API. If the user has a mobile device with a camera, they are also given a choice to send a photograph.
+You might not have graphicsmagick installed, which is required to confer the uploaded images.
 
-Once the file is submitted, it is converted on the server using graphicsmagick. It is inserted into mongo's GridFS with large and thumbnail sized copies.
+```
+ $ brew install graphicsmagick
+```
+
+## Details
+
+This package allows users to *create* accounts. They can't re-login to a previously-created accounts. As such, this login method offers zero persistence and zero security (other than a zero persistence, which in most cases is pretty secure).
+
+Submitted images are uploaded, stored and proceed by the wonderful collectionFS package. For ease of implementation and transportation, selfie-sign-in uses MongoDB's gridFS file store. Selfies are converted using graphicsmagick to thumbnails and higher resolution images.
+
+## API 
+
+```
+{{#each user}}
+  <img src="{{selfie.url}}"/>
+  <img src="{{user.selfie.url filestore='large"/>
+{{/each}}
+```
+
+## Write your own UI
 
 Finally, the image id is stored with the user that has just logged in, and is made accessible using CollectionFS's helpers
 
 ```
-{{this.url store='thumbnail'}}
+<img src="{{user.selfie.url}}"/>
 ```
+
+
+## How it works (TBC)
+
+IF the username is required, then obviously use the FSimage id as the username.
+
+Otherwise, what's the point?
+
+
 
 ## Features/Components
 
@@ -45,13 +65,8 @@ Finally, the image id is stored with the user that has just logged in, and is ma
 * Works out of the box with zero config, configurable if needed
 
 
-## Configure
+## Other Packages Used
 
-* Change storage options - Default is Mongo's GridFS
-
-
-
-
-
+* CollectionFS (and some of it's siblings)
 
 
