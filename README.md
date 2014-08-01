@@ -17,9 +17,10 @@ Add the login template to your app.
 ```
 {{> selfie_sign_in}}
 ```
-This step is optional unless you want to write your own UI.
+This step is optional unless you want to write your own UI. 
 
-You might not have graphicsmagick installed, which is required to confer the uploaded images.
+You might not have graphicsmagick installed, which is required to convert the uploaded images. On OS X, you can install it using [Homebrew](http://brew.sh/).
+
 
 ```
  $ brew install graphicsmagick
@@ -27,9 +28,11 @@ You might not have graphicsmagick installed, which is required to confer the upl
 
 ## Details
 
-This package allows users to *create* accounts. They can't re-login to a previously-created accounts. As such, this login method offers zero persistence and zero security (other than a zero persistence, which in most cases is pretty secure).
+This package allows users to create accounts within your meteor app. They can't re-login to a previously-created account, so other than having having low persistence, this package offers little in the way of security.
 
-Submitted images are uploaded, stored and proceed by the wonderful collectionFS package. For ease of implementation and transportation, selfie-sign-in uses MongoDB's gridFS file store. Selfies are converted using graphicsmagick to thumbnails and higher resolution images.
+Submitted images are uploaded, stored and proceed by the wonderful [CollectionFS](https://github.com/CollectionFS/Meteor-CollectionFS) package. Uploaded selfies are converted using graphicsmagick to thumbnails and higher resolution images in JPEG format.
+
+For ease transportation, selfie-sign-in uses MongoDB's gridFS file store by default. Currently this isn't supported but can be solved easily with a pull request or issue.
 
 ## API 
 
