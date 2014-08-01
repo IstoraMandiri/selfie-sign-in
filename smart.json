@@ -2,8 +2,9 @@
   "name": "selfie-sign-in",
   "description": "An insecure sign-in method using selfies",
   "homepage": "https://github.com/hitchcott/selfie-sign-in",
+  "git":"https://github.com/hitchcott/selfie-sign-in.git",
   "author": "Chris Hitchcott <hitchcott@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "packages": {
     "collectionFS": {},
     "cfs-gridfs": {},
