@@ -1,5 +1,7 @@
 # Selfie Sign In
 
+# WORK IN PROGRESS
+
 A selfie-based login method for Meteor.
 
 Users are are able to login by uploading an image, which becomes their avatar for the duration of the session. If they are using a mobile device, they are prompted to take a picture using their camera, and are encouraged to take a selfie.
